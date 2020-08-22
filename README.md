@@ -6,7 +6,7 @@ There are two python scripts:
 
 ---
 
-## [subtitles_compressor.py](subtitles_compressor.py)
+## [`subtitles_compressor.py`](subtitles_compressor.py)
 
 Since sentences are divided into fragments, first script connects them together and separates sentences from each other.
 
@@ -37,7 +37,7 @@ Now you can make some corrections as well since program treats any dot '.' as th
 
 ---
 
-## [subtitles_translator.py](subtitles_translator.py)
+## [`subtitles_translator.py`](subtitles_translator.py)
 
 The only thing left is to translate sentences. After using file generated above, you will get this output:
 
