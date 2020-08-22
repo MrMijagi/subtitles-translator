@@ -4,6 +4,19 @@ There are two python scripts:
 * [subtitles_compressor.py](subtitles_compressor.py)
 * [subtitles_translator.py](subtitles_translator.py)
 
+The easiest way to use it is to put both script and subtitles into the same folder.
+Then from cmd you can run them like so:
+
+`python subtitles_compressor.py <file_name>`
+
+or
+
+`python subtitles_translator.py <file_name>`
+
+Scripts will generate new file so don't worry about the original one :)
+
+Also I've tested them only on .sbv files, but .srt should work as well. If there are problems let me know and I'll fix it.
+
 ---
 
 ## [`subtitles_compressor.py`](subtitles_compressor.py)
