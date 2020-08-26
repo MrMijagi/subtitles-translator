@@ -123,10 +123,10 @@ def main():
         sys.exit("Something went wrong with opening " + sys.argv[2] + " file.")
 
     # output file
-    if sys.argv[1] == "en":
-        w = open(sys.argv[2].replace('.pl.md', '.en.md'), 'w', encoding='utf-8')
-    else:
-        w = open(sys.argv[2].replace('.en.md', '.pl.md'), 'w', encoding='utf-8')
+    try:
+        w = open(sys.argv[3], 'w', encoding='utf-8')
+    except IOError:
+        sys.exit("Something went wrong with opening " + sys.argv[3] + " file.")
 
     # translate text
     output = filter_text(r.read())
