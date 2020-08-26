@@ -1,3 +1,10 @@
+# Scripts:
+
+* [Subtitles translator](#subtitles-translator)
+* [Presentations translator](#presentations-translator)
+
+___
+
 # subtitles-translator
 
 There are two python scripts:
