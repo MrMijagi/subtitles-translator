@@ -74,7 +74,7 @@ After that you can copy/paste fragments of translated sentences directly into su
 
 ___
 
-# presentation-translator
+# presentations-translator
 
 NOTE: It only works for .md presentations.
 
