@@ -8,8 +8,8 @@ ___
 # subtitles-translator
 
 There are two python scripts:
-* [subtitles_compressor.py](subtitles_compressor.py)
-* [subtitles_translator.py](subtitles_translator.py)
+* [subtitles_compressor.py](##subtitles_compressor.py)
+* [subtitles_translator.py](##subtitles_translator.py)
 
 The easiest way to use it is to put both script and subtitles into the same folder.
 Then from cmd you can run them like so:
@@ -26,7 +26,7 @@ Also I've tested them only on .sbv files, but .srt should work as well. If there
 
 ---
 
-## [`subtitles_compressor.py`](subtitles_compressor.py)
+## [`subtitles_compressor.py`](https://github.com/MrMijagi/work-translators/blob/master/subtitles_compress.py)
 
 Since sentences are divided into fragments, first script connects them together and separates sentences from each other.
 
@@ -57,7 +57,7 @@ Now you can make some corrections as well since program treats any dot '.' as th
 
 ---
 
-## [`subtitles_translator.py`](subtitles_translator.py)
+## [`subtitles_translator.py`](https://github.com/MrMijagi/work-translators/blob/master/subtitles_translator.py)
 
 The only thing left is to translate sentences. After using file generated above, you will get this output:
 
@@ -71,3 +71,26 @@ Vector - this is also an array, but we say that it is dynamic because it can exp
 
 Next to original sentence you have the translated version, so you can correct it.
 After that you can copy/paste fragments of translated sentences directly into subtitles :)
+
+___
+
+# presentation-translator
+
+NOTE: It only works for .md presentations.
+
+I may not have included all html/markdown tags, so let me know about any issues you encounter :)
+
+---
+
+## [`md_translator.py`](https://github.com/MrMijagi/work-translators/blob/master/md_translator.py)
+
+This script takes 3 arguments: destination language (only 'pl' or 'en'), source filename and output filename like so:
+
+`python md_translator.py [pl|en] <input_filename> <output_filename>`
+
+So let's say you have `polish.md` presentation and want to translate it and put into `english.md` file.
+
+`python md_translator.py en polish.md english.md`
+
+
+
