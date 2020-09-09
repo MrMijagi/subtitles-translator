@@ -15,7 +15,8 @@ tags_with_inside = [["<span", "</span>"],
                     ["<a", "</a>"],
                     ["**", "**"],
                     ["[", "]"],
-                    ["<div", "</div>"]]
+                    ["<div", "</div>"],
+                    ["<pre", "</pre>"]]
 tags_to_ignore = [["<img", ">"],
                   ["<image", ">"],
                   ["```", "```"],
