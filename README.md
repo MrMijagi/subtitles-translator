@@ -18,7 +18,7 @@ Then from cmd you can run them like so:
 
 or
 
-`python subtitles_translator.py <file_name>`
+`python subtitles_translator.py <dest_lang> <file_name>`
 
 Scripts will generate new file so don't worry about the original one :)
 
@@ -53,7 +53,7 @@ Przejdźmy sobie do tych kontenerów sekwencyjnych.
 Wektor - to jest też taka tablica, tylko mówimy, że ona jest już dynamiczna, ponieważ może się rozszerzać. 
 ```
 
-Now you can make some corrections as well since program treats any dot '.' as the end of sentence (which isn't always the case).
+Now you may have to do some corrections as well since program treats any dot '.' as the end of sentence (which isn't always the case - an example being "e.g." or "i.e.").
 
 ---
 
