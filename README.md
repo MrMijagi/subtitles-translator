@@ -79,6 +79,7 @@ ___
 NOTE: It only works for .md presentations.
 
 I may not have included all html/markdown tags, so let me know about any issues you encounter :)
+So far whitespace characters can be messed up so you have to manually add new lines (I'll update it when I have time).
 
 ---
 
@@ -92,5 +93,4 @@ So let's say you have `polish.md` presentation and want to translate it and put 
 
 `python md_translator.py en polish.md english.md`
 
-
-
+Here is the link for all language abbreviations: https://github.com/lushan88a/google_trans_new/blob/main/constant.py
