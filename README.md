@@ -22,7 +22,7 @@ or
 
 Scripts will generate new file so don't worry about the original one :)
 
-Also I've tested them only on .sbv files, but .srt should work as well. If there are problems let me know and I'll fix it.
+It works on .sbv subtitles - .srt has also number of subtitle inserted in sentences (I'll update it when I have time).
 
 ---
 
@@ -84,9 +84,9 @@ I may not have included all html/markdown tags, so let me know about any issues 
 
 ## [`md_translator.py`](https://github.com/MrMijagi/work-translators/blob/master/md_translator.py)
 
-This script takes 3 arguments: destination language (only 'pl' or 'en'), source filename and output filename like so:
+This script takes 3 arguments: destination language, source filename and output filename like so:
 
-`python md_translator.py [pl|en] <input_filename> <output_filename>`
+`python md_translator.py <dest_lang> <input_filename> <output_filename>`
 
 So let's say you have `polish.md` presentation and want to translate it and put into `english.md` file.
 
