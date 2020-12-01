@@ -9,7 +9,7 @@
 # All translated text goes into output variable and gets saved into file at the end.
 
 import sys
-from googletrans import Translator
+from google_trans_new import google_translator
 
 tags_with_inside = [["<span", "</span>"],
                     ["<a", "</a>"],
@@ -26,7 +26,7 @@ tags_to_ignore = [["<img", ">"],
 
 tags = tags_to_ignore + tags_with_inside
 
-translator = Translator(service_urls=['translate.google.com'])
+translator = google_translator()
 
 
 # this method should definitely be optimized but for now it's enough
@@ -45,10 +45,8 @@ def find_first_tag(line):
 def translate_clear_text(text):
     if text == "":
         return text
-    elif sys.argv[1] == "en":
-        return translator.translate(text, src='pl', dest='en').text
     else:
-        return translator.translate(text, src='en', dest='pl').text
+        return translator.translate(text, lang_tgt=sys.argv[1])
 
 
 # I need this function to filter the text for the translator, which doesn't like strings with only whitespaces
@@ -87,7 +85,6 @@ def filter_text(input_text):
                 fst, snd, input_text = input_text.partition(tag[0])
                 output += translate_text(fst) + snd
 
-
                 # pass text before closing tag and closing tag itself to output
                 # text before <a| PARAMETERS>text inside|</span>| text after
                 #                          fst             snd    input_text
@@ -113,9 +110,8 @@ def filter_text(input_text):
 
 def main():
 
-    # check first argument
-    if sys.argv[1] != "pl" and sys.argv[1] != "en":
-        sys.exit("First argument is incorrect! (must be 'pl' or 'en').")
+    if len(sys.argv) != 4:
+        sys.exit("Wrong number of arguments! Check readme.md for proper usage.")
 
     # check second argument, open input file
     try:
