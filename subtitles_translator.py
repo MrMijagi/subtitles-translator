@@ -30,6 +30,8 @@ def get_position(sentence, ratio):
     return position
 
 
+# This class takes each line of .srt file and returns True if the line contains transcription
+# or False if the line contains timecode or other metadata
 class SRTFilter:
     def __init__(self):
         self.counter = 1
@@ -50,6 +52,7 @@ class SRTFilter:
         return False
 
 
+# This class holds one line of transcription. It manages list of Sentences (class below).
 class Subtitle:
     def __init__(self, line, sentence=None, sentence_index=0):
         self.line = line
@@ -83,6 +86,27 @@ class Subtitle:
         return (''.join([sentence[0].translated_parts[sentence[1]] for sentence in self.sentences]) + '\n').lstrip()
 
 
+# This class holds pieces of sentences across lines of transcription.
+# For example with this .srt file:
+# 1
+# 00:00:10,450 --> 00:00:12,550
+# I like
+#
+# 2
+# 00:00:13,330 --> 00:00:15,760
+# eating strawberries
+#
+# 3
+# 00:00:16,720 --> 00:00:20,990
+# at midnight. Are
+# strawberries red?
+#
+# There are 4 Subtitle objects that hold 4 lines of transcription
+# and there are two Sentence objects that hold both sentences:
+#  - I like | eating strawberries | at midnight.
+#  - Are | strawberries red?
+# Then both sentences get translated and divided into pieces so the length of each piece matches the original.
+# Subtitle objects remember which piece of each sentence it holds and then puts it up together in str() function.
 class Sentence:
     def __init__(self, sentence=''):
         self.sentence = sentence
