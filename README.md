@@ -7,16 +7,16 @@ ___
 
 # subtitles-translator
 
-Script [subtitles_translator_2.0.py](##subtitles_traslator_2.0.py) translates .srt subtitles and puts it onto new file.
+Script [subtitles_translator.py](##subtitles_traslator.py) translates .srt subtitles and puts it onto new file.
 
 The easiest way to use it is to put both script and subtitles into the same folder.
 Then from cmd you can run them like so:
 
-`python subtitles_translator_2.0.py <dest_lang> <file_name>`
+`python subtitles_translator.py <dest_lang> <file_name>`
 
 For example:
 
-`python subtitles_translator_2.0.py en test.srt`
+`python subtitles_translator.py en test.srt`
 
 will create `test_en.srt` file with translated subtitles.
 
