@@ -1,7 +1,7 @@
 # Scripts:
 
 * [Subtitles translator](#subtitles-translator)
-* [Presentations translator](#presentations-translator)
+* [Markdown translator](#markdown-translator)
 
 ___
 
@@ -22,12 +22,9 @@ will create `test_en.srt` file with translated subtitles.
 
 ___
 
-# presentations-translator
+# markdown-translator
 
-NOTE: It only works for .md presentations.
-
-I may not have included all html/markdown tags, so let me know about any issues you encounter :)
-So far whitespace characters can be messed up so you have to manually add new lines (I'll update it when I have time).
+I may not have included all html/markdown tags, so let me know about any issues you encounter :) (you can also just put missing tags inside the python script yourself)
 
 ---
 
