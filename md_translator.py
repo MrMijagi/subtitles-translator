@@ -46,11 +46,11 @@ def translate_clear_text(text):
     if text == "":
         return text
     else:
-        return translator.translate(text, lang_tgt=sys.argv[1])
+        return translator.translate(text, lang_tgt=sys.argv[1]).strip()
 
 
-# I need this function to filter the text for the translator, which doesn't like strings with only whitespaces
-def translate_text(text):
+# removes whitespace characters from start and end of the string
+def translate_unstripped_test(text):
     all_len = len(text)
     left_len = len(text) - len(text.lstrip())
     right_len = len(text) - len(text.rstrip())
@@ -58,13 +58,37 @@ def translate_text(text):
     if all_len == left_len:  # the entire string is whitespaces
         return text
     else:
-        return text[:left_len] + translate_clear_text(text[left_len:all_len - right_len]) + text[all_len - right_len:]
+        return text[:left_len] \
+                      + translate_clear_text(text[left_len:all_len - right_len]) \
+                      + text[all_len - right_len:]
+
+
+# Since the translator 'eats' new line, I have to save them
+def translate_text(text):
+    translated = ''
+
+    while len(text) > 0:
+        index = text.find('\n')
+
+        if index != -1:
+            text_to_translate = text[:index]
+            text = text[index + 1:]
+
+            translated += translate_unstripped_test(text_to_translate)
+            translated += '\n'
+        else:
+            translated += translate_unstripped_test(text)
+            text = ''
+
+    return translated
 
 
 def filter_text(input_text):
     output = ""
+
     while len(input_text) > 0:
         tag = find_first_tag(input_text)
+
         if tag[0] != "":  # tag was found
             if tag in tags_to_ignore:  # skip the inside, translate the rest
                 # pass text before tag and tag itself to output
