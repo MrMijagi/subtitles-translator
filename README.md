@@ -7,7 +7,7 @@ ___
 
 # subtitles-translator
 
-The script below translates .srt subtitles to any language specified.
+The script below translates .srt subtitles to any language specified. What is important is that it doesn't translate text line by line. Instead, it concatenates all text and groups it into sentences so that the translation is more accurate. After that, it tries to divide the translated text into lines with the same length as before.
 
 ---
 
