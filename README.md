@@ -7,7 +7,11 @@ ___
 
 # subtitles-translator
 
-Script [subtitles_translator.py](##subtitles_traslator.py) translates .srt subtitles and puts it onto new file.
+The script below translates .srt subtitles to any language specified.
+
+---
+
+## [`subtitles_translator.py`](https://github.com/MrMijagi/work-translators/blob/master/subtitles_translator.py)
 
 The easiest way to use it is to put both script and subtitles into the same folder.
 Then from cmd you can run them like so:
@@ -23,6 +27,8 @@ will create `test_en.srt` file with translated subtitles.
 ___
 
 # markdown-translator
+
+The script below translates markdown document while ignoring things that shouldn't be translated (for example tags with code inside them).
 
 I may not have included all html/markdown tags, so let me know about any issues you encounter :) (you can also just put missing tags inside the python script yourself)
 
